@@ -11,6 +11,15 @@ stages{
             git branch: 'main', changelog: false, poll: false, url: 'https://github.com/nagavarmini/demo-counter-app.git'
         }
     }
+    stage('UNIT testing'){
+
+        steps{
+
+            sh 'mvn test'
+        }
+    }
+
+
 
     }
 }
