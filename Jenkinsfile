@@ -15,10 +15,9 @@ stages{
 
         steps{
 
-            sh 'mvn test'
+            sh '/Users/varminimunagala/Downloads/apache-maven-3.9.1/bin/mvn test'
         }
     }
-
 
 
     }
