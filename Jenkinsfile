@@ -32,6 +32,15 @@ stages{
             sh '/Users/varminimunagala/Downloads/apache-maven-3.9.1/bin/mvn clean install'
         }
     }
+    stage('Static code analysis'){
+
+        steps{
+
+            withSonarQubeEnv(credentialsId: 'sonar-api') {
+         sh 'mvn clean pacakge sonar:sonar'
+               }
+        }
+    }
 
 
     }
