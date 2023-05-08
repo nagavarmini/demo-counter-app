@@ -37,7 +37,7 @@ stages{
         steps{
             script{
                  withSonarQubeEnv(credentialsId: 'sonar-api') {
-                 sh 'mvn clean pacakge sonar:sonar'
+                 sh '/Users/varminimunagala/Downloads/apache-maven-3.9.1/bin/mvn clean pacakge sonar:sonar'
                }
             }
         }
