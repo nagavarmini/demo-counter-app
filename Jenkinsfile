@@ -25,6 +25,14 @@ stages{
             sh '/Users/varminimunagala/Downloads/apache-maven-3.9.1/bin/mvn verify -DskipUnitTests'
         }
     }
+    stage('Maven Build'){
+
+        steps{
+
+            sh '/Users/varminimunagala/Downloads/apache-maven-3.9.1/bin/mvn clean install'
+        }
+    }
+
 
     }
 }
