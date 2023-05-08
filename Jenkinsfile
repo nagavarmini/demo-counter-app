@@ -18,7 +18,13 @@ stages{
             sh '/Users/varminimunagala/Downloads/apache-maven-3.9.1/bin/mvn test'
         }
     }
+    stage('Integration testing'){
 
+        steps{
+
+            sh '/Users/varminimunagala/Downloads/apache-maven-3.9.1/bin/mvn verify -DskipUnitTests'
+        }
+    }
 
     }
 }
