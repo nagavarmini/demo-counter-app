@@ -96,7 +96,7 @@ stages{
                 script{
                          withCredentials([string(credentialsId: 'docker_creds', variable: 'docker_hub_credentials')]) {
 
-                            sh '/usr/local/bin/docker login -u varmini -p $(docker_hub_cred)'
+                            sh '/usr/local/bin/docker login -u varmini -p $(docker_hub_credentials)'
                             sh '/usr/local/bin/docker image push varmini/$JOB_NAME:v1.$BUILD_ID'
                             sh '/usr/local/bin/docker image push varmini/$JOB_NAME:latest'
 
