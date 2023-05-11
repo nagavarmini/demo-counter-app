@@ -55,7 +55,7 @@ stages{
                 script{
 
                     def readPomVersion = readMavenPom file: 'pom.xml'  
-                    def nexusRepo = readMavenPom.version.endsWith("SNAPSHOT") ? "demoapp-snap" : "demoapp"  
+                    def nexusRepo = readPomVersion.version.endsWith("SNAPSHOT") ? "demoapp-snap" : "demoapp"  
                     nexusArtifactUploader artifacts:
                      [
                         [
@@ -68,7 +68,7 @@ stages{
                                 nexusUrl: '3.80.117.207:8081',
                                 nexusVersion: 'nexus3',
                                 protocol: 'http',
-                                repository: 'demoapp', 
+                                repository: ${nexusRepo}, 
                                 version: "${readPomVersion.version}"
                 }
             }
