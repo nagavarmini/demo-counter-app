@@ -54,7 +54,8 @@ stages{
             steps{
                 script{
 
-                    def readPomVersion = readMavenPom file: 'pom.xml'    
+                    def readPomVersion = readMavenPom file: 'pom.xml'  
+                    def nexusRepo = readMavenPom.version.endsWith("SNAPSHOT") ? "demoapp-snap" : "demoapp"  
                     nexusArtifactUploader artifacts:
                      [
                         [
