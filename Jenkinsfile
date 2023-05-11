@@ -65,7 +65,7 @@ stages{
                                 credentialsId: 'nexus-auth',
                                 groupId: 'com.example', 
                                 nexusUrl: '3.80.117.207:8081',
-                                nexusVersion: 'nexus3', 
+                                nexusVersion: 'nexus3',
                                 protocol: 'http',
                                 repository: 'demoapp', 
                                 version: "${readPomVersion.version}"
